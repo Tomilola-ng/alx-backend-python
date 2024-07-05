@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-    SUM OF ARRAY OF FLOATS WITH TYPE ANNOTATIONS
+    SUM OF MIXED ARRAY OF FLOATS
+    AND INTS WITH TYPE ANNOTATIONS
 """
 
 from typing import List, Union
