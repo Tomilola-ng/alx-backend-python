@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-    FIRST ELEMENT
-    ANY | NONE
+    HIGHLGHT FROM TYPE
 """
 
 from typing import Mapping, Any, Union, TypeVar
