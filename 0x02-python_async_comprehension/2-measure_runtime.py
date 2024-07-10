@@ -2,6 +2,7 @@
 
 """
     ASYNCHRONOUS TASKS
+    USING TIME MODULE
 """
 
 import time
