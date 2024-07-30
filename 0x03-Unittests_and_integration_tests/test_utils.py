@@ -13,22 +13,16 @@ from utils import *
 class TestAccessNestedMap(unittest.TestCase):
     """Test access_nested_map function"""
     @parameterized.expand([
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "c"], 1),
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["a", "c", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["b", "c", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "c", "d"], None),
+        ({"person": {"bio": {"name": "John", "age": 30}}}, ("person", "bio", "name"), "John"),
+        ({"person": {"bio": {"name": "John", "age": 30}}}, ("person", "bio", "age"), 30),
     ])
     def test_access_nested_map(self, nested_map, path, expected):
         """Test access_nested_map function"""
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "c"], 1),
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["a", "c", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["b", "c", "d"], None),
-        ({"a": {"b": {"c": 1}}}, ["a", "b", "c", "d"], None),
+        ({"person": {"bio": {"name": "John", "age": 30}}}, ("person", "bio", "address"), "address"),
+        ({"person": {"bio": {"name": "John", "age": 30}}}, ("person", "address"), "address"),
     ])
     def test_access_nested_map_with_key_error(self, nested_map, path, expected):
         """Test access_nested_map with KeyError"""
